@@ -63,27 +63,6 @@
 .program-card ul { margin-top: .8rem; padding-left: 1.2rem; }
 .program-card ul li { font-size: .9rem; color: var(--muted); line-height: 1.7; }
 
-/* ── STEM STRIP ── */
-.stem-strip {
-  background: var(--ink); border-radius: 28px; padding: 3rem; margin: 0 3rem 4rem;
-  display: grid; grid-template-columns: repeat(4,1fr); gap: 1.5rem;
-  position: relative; overflow: hidden;
-}
-.stem-strip::before {
-  content: 'STEM'; position: absolute;
-  font-family: 'Fraunces', serif; font-size: 14rem; font-weight: 900;
-  color: rgba(255,255,255,.03); right: -2rem; top: 50%; transform: translateY(-50%);
-  pointer-events: none; line-height: 1;
-}
-.stem-item { position: relative; z-index: 1; }
-.stem-letter { font-family: 'Fraunces', serif; font-size: 3rem; font-weight: 900; line-height: 1; margin-bottom: .4rem; }
-.stem-item:nth-child(1) .stem-letter { color: var(--coral); }
-.stem-item:nth-child(2) .stem-letter { color: var(--teal); }
-.stem-item:nth-child(3) .stem-letter { color: var(--yellow); }
-.stem-item:nth-child(4) .stem-letter { color: var(--sage); }
-.stem-word { font-weight: 800; color: #fff; font-size: .95rem; margin-bottom: .4rem; }
-.stem-desc { font-size: .82rem; color: rgba(255,255,255,.5); line-height: 1.5; }
-
 /* ── DAILY SCHEDULE ── */
 .schedule-section {
   background: #fff; border-radius: 28px; padding: 3rem; margin: 0 3rem 4rem;
@@ -122,6 +101,5 @@
 @media (max-width: 900px) {
   .page-hero, .section { padding-left: 1.5rem; padding-right: 1.5rem; }
   .program-grid { grid-template-columns: 1fr; }
-  .stem-strip { grid-template-columns: 1fr 1fr; margin: 0 1.5rem 3rem; padding: 2rem; }
   .schedule-section { margin: 0 1.5rem 3rem; padding: 2rem; }
 }
