@@ -8,7 +8,7 @@
 
 /* ── PAGE HERO (coral gradient) ── */
 .page-hero {
-  background: linear-gradient(135deg, #E05530 0%, #C94E2A 100%);
+  background: linear-gradient(135deg, #e03537 0%, #c22d30 100%);
   padding: 5rem 3rem 4rem; position: relative; overflow: hidden;
 }
 .page-hero::before {

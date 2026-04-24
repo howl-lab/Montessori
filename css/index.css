@@ -79,7 +79,7 @@ footer { padding: 3rem; color: rgba(255,255,255,.45); font-size: .85rem; }
   cursor: pointer; transition: transform .15s, box-shadow .15s;
   font-family: 'Nunito', sans-serif; text-decoration: none; display: inline-block;
 }
-.btn-primary:hover { transform: translateY(-3px); box-shadow: 0 8px 28px rgba(244,98,58,.45); }
+.btn-primary:hover { transform: translateY(-3px); box-shadow: 0 8px 28px rgba(239,64,67,.45); }
 .btn-outline {
   background: transparent; color: var(--ink);
   border: 2.5px solid var(--ink); border-radius: 50px;
@@ -212,7 +212,7 @@ footer { padding: 3rem; color: rgba(255,255,255,.45); font-size: .85rem; }
 
 /* ── CONTACT ── */
 #contact {
-  background: linear-gradient(135deg, #E05530 0%, #C94E2A 100%);
+  background: linear-gradient(135deg, #e03537 0%, #c22d30 100%);
   padding: 6rem 3rem; position: relative; overflow: hidden;
 }
 #contact::after {

@@ -49,7 +49,7 @@
   transition: transform .2s, box-shadow .2s;
 }
 .program-card:hover { transform: translateY(-5px); box-shadow: 0 16px 40px rgba(28,26,46,.12); }
-.program-card.coral  { background: #FFF0EB; border: 2px solid rgba(244,98,58,.2); }
+.program-card.coral  { background: #FFF0EB; border: 2px solid rgba(239,64,67,.2); }
 .program-card.teal   { background: #E8FAFA; border: 2px solid rgba(42,191,191,.2); }
 .program-card.yellow { background: #FFFBEA; border: 2px solid rgba(249,200,52,.3); }
 .program-card.plum   { background: #F4EDFB; border: 2px solid rgba(123,63,160,.15); }
