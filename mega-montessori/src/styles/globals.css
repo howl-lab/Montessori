@@ -1,0 +1,86 @@
+/* globals.css — site-wide base styles.
+ *
+ * Keep this file lean: only truly global rules go here.
+ * Component-specific styles live in their own .css files.
+ */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  background: var(--cream);
+  color: var(--ink);
+  overflow-x: hidden;
+}
+
+/* ── Scroll reveal animation ──────────────────────────────────────────────── */
+/* Components add the .reveal class; JS adds .visible when they scroll into view */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.65s ease, transform 0.65s ease;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── Wave SVG dividers ────────────────────────────────────────────────────── */
+.wave-divider {
+  display: block;
+  width: 100%;
+  line-height: 0;
+}
+
+/* ── Shared section labels ────────────────────────────────────────────────── */
+.section-label {
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--teal);
+  margin-bottom: 0.6rem;
+}
+
+.section-title {
+  font-family: var(--font-serif);
+  font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+  font-weight: 900;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.section-title span {
+  color: var(--coral);
+}
+
+/* ── Page hero shared base ───────────────────────────────────────────────── */
+.page-tag {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border-radius: 50px;
+  padding: 0.35rem 1rem;
+  margin-bottom: 1.2rem;
+}
+
+/* ── Fade-up animation (used in hero sections) ───────────────────────────── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Responsive breakpoint ───────────────────────────────────────────────── */
+@media (max-width: 900px) {
+  .hide-mobile { display: none; }
+}

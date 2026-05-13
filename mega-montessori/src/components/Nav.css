@@ -1,0 +1,82 @@
+/* Nav.css — styles scoped to the Nav component.
+ * We use BEM naming (Block__Element--Modifier) to avoid class name collisions.
+ * Block = nav, Element = nav__logo, Modifier = nav__link--active
+ */
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 3rem;
+  background: var(--cream);
+  border-bottom: 2px solid rgba(249, 200, 52, 0.35);
+}
+
+.nav__left {
+  display: flex;
+  align-items: center;
+}
+
+.nav__logo {
+  font-family: var(--font-serif);
+  font-size: 1.3rem;
+  font-weight: 900;
+  color: var(--plum);
+  line-height: 1.1;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  padding: 0;
+}
+
+.nav__logo span {
+  color: var(--coral);
+}
+
+.nav__links {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+}
+
+.nav__link {
+  background: none;
+  border: none;
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: var(--ink);
+  cursor: pointer;
+  letter-spacing: 0.02em;
+  transition: color 0.2s;
+  padding: 0;
+}
+
+.nav__link:hover,
+.nav__link--active {
+  color: var(--coral);
+}
+
+.nav__cta {
+  background: var(--coral);
+  color: #fff;
+  border: none;
+  border-radius: 50px;
+  padding: 0.6rem 1.5rem;
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  font-weight: 800;
+  cursor: pointer;
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+
+.nav__cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(244, 98, 58, 0.4);
+}
+
+@media (max-width: 900px) {
+  .nav { padding: 1rem 1.5rem; }
+  .nav__links { display: none; }
+}

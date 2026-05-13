@@ -1,0 +1,44 @@
+/* variables.css — design tokens for the whole site.
+ *
+ * CSS custom properties (variables) live on :root so every component
+ * can use them. Change a color here and it updates everywhere.
+ */
+
+:root {
+  /* ── Color palette ── */
+  --coral:  #F4623A;
+  --yellow: #F9C834;
+  --teal:   #2ABFBF;
+  --plum:   #7B3FA0;
+  --sage:   #6BBF88;
+  --cream:  #FFF9F0;
+  --ink:    #1C1A2E;
+  --muted:  #6B6882;
+
+  /* Darker accent shades used for gradients & footers */
+  --coral-dark:  #C94E2A;
+  --coral-deep:  #B8411F;
+  --coral-grad:  #E05530;
+
+  /* ── Typography ── */
+  --font-serif: 'Fraunces', serif;
+  --font-sans:  'Nunito', sans-serif;
+
+  /* ── Spacing scale ── */
+  --space-xs:  0.5rem;
+  --space-sm:  1rem;
+  --space-md:  2rem;
+  --space-lg:  3rem;
+  --space-xl:  5rem;
+  --space-2xl: 6rem;
+
+  /* ── Border radius ── */
+  --radius-sm: 12px;
+  --radius-md: 20px;
+  --radius-lg: 28px;
+
+  /* ── Shadows ── */
+  --shadow-sm: 0 4px 20px rgba(28, 26, 46, 0.07);
+  --shadow-md: 0 8px 30px rgba(28, 26, 46, 0.12);
+  --shadow-lg: 0 16px 40px rgba(28, 26, 46, 0.12);
+}

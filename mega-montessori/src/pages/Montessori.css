@@ -1,0 +1,295 @@
+/* Montessori Method page */
+
+.mm-hero {
+  background: var(--teal);
+  padding: 5rem 3rem 4rem;
+  position: relative;
+  overflow: hidden;
+}
+.mm-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 75% 40%, rgba(255, 255, 255, 0.12) 0%, transparent 55%),
+    radial-gradient(ellipse at 20% 70%, rgba(249, 200, 52, 0.15) 0%, transparent 50%);
+  pointer-events: none;
+}
+.mm-hero__inner {
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+.mm-hero__tag {
+  background: var(--plum);
+  color: #fff;
+}
+.mm-hero__title {
+  font-family: var(--font-serif);
+  font-size: clamp(2.2rem, 5.5vw, 3.8rem);
+  font-weight: 900;
+  color: #fff;
+  line-height: 1.08;
+  margin-bottom: 1.1rem;
+}
+.mm-hero__title em {
+  color: var(--yellow);
+  font-style: italic;
+}
+.mm-hero__sub {
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.72);
+  line-height: 1.75;
+  max-width: 560px;
+}
+
+/* Opening quote on dark */
+.mm-quote-dark {
+  background: var(--ink);
+  padding: 3.5rem 3rem;
+  text-align: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+.mm-quote-dark blockquote {
+  font-family: var(--font-serif);
+  font-size: clamp(1.25rem, 2.8vw, 1.85rem);
+  color: #fff;
+  font-style: italic;
+  max-width: 640px;
+  margin: 0 auto 0.75rem;
+  line-height: 1.6;
+}
+.mm-quote-dark cite {
+  color: var(--yellow);
+  font-weight: 800;
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-style: normal;
+}
+
+/* Biography */
+.mm-bio {
+  background: var(--cream);
+  padding: 5rem 3rem;
+}
+.mm-bio__header {
+  max-width: 900px;
+  margin: 0 auto 3rem;
+  display: flex;
+  gap: 1.5rem;
+  align-items: flex-start;
+}
+.mm-bio__medallion {
+  flex-shrink: 0;
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--plum), var(--coral));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-md);
+}
+.mm-bio__initials {
+  font-family: var(--font-serif);
+  font-size: 1.75rem;
+  font-weight: 900;
+  color: #fff;
+}
+.mm-bio__heading {
+  font-family: var(--font-serif);
+  font-size: clamp(1.6rem, 3vw, 2.25rem);
+  font-weight: 900;
+  color: var(--ink);
+  margin-bottom: 0.75rem;
+  line-height: 1.15;
+}
+.mm-bio__heading span {
+  color: var(--coral);
+}
+.mm-bio__lede {
+  font-size: 1.05rem;
+  color: var(--muted);
+  line-height: 1.7;
+}
+.mm-bio__body {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(200px, 280px) 1fr;
+  gap: 3rem;
+  align-items: start;
+}
+.mm-bio__frame {
+  border-radius: 20px;
+  overflow: hidden;
+  border: 3px solid rgba(123, 63, 160, 0.25);
+  aspect-ratio: 3 / 4;
+  max-height: 420px;
+  background: linear-gradient(165deg, #e8e4f0 0%, #f5f0fa 100%);
+}
+.mm-bio__silhouette {
+  height: 100%;
+  min-height: 260px;
+  background:
+    radial-gradient(ellipse at 50% 35%, rgba(123, 63, 160, 0.35) 0%, transparent 45%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.5) 0%, transparent 40%);
+}
+.mm-bio__copy p {
+  font-size: 1.02rem;
+  color: var(--muted);
+  line-height: 1.8;
+  margin-bottom: 1.1rem;
+}
+.mm-bio__copy p:last-child {
+  margin-bottom: 0;
+}
+.mm-bio__copy em {
+  color: var(--plum);
+  font-style: italic;
+  font-weight: 700;
+}
+
+/* Core beliefs */
+.mm-beliefs {
+  background: #fff;
+  padding: 5rem 3rem;
+}
+.mm-beliefs__inner {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+.mm-beliefs__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-top: 2.5rem;
+}
+.mm-belief {
+  background: var(--cream);
+  border-radius: 20px;
+  padding: 1.75rem;
+  border: 1px solid rgba(28, 26, 46, 0.06);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.mm-belief:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+.mm-belief__number {
+  font-family: var(--font-serif);
+  font-size: 2rem;
+  font-weight: 900;
+  color: var(--teal);
+  line-height: 1;
+  margin-bottom: 0.75rem;
+}
+.mm-belief__title {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--ink);
+  margin-bottom: 0.6rem;
+}
+.mm-belief__desc {
+  font-size: 0.9rem;
+  color: var(--muted);
+  line-height: 1.65;
+}
+
+/* Legacy stats */
+.mm-legacy {
+  background: var(--cream);
+  padding: 4.5rem 3rem;
+}
+.mm-legacy__inner {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+.mm-legacy__heading {
+  font-family: var(--font-serif);
+  font-size: clamp(1.65rem, 3vw, 2.35rem);
+  font-weight: 900;
+  color: var(--ink);
+  margin-bottom: 2.5rem;
+}
+.mm-legacy__heading span {
+  color: var(--coral);
+}
+.mm-legacy__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.25rem;
+}
+.mm-legacy__stat {
+  background: #fff;
+  border-radius: 16px;
+  padding: 1.5rem 1rem;
+  box-shadow: var(--shadow-sm);
+  border-top: 3px solid var(--coral);
+}
+.mm-legacy__stat--1 {
+  border-top-color: var(--teal);
+}
+.mm-legacy__stat--2 {
+  border-top-color: var(--yellow);
+}
+.mm-legacy__stat--3 {
+  border-top-color: var(--plum);
+}
+.mm-legacy__stat-num {
+  font-family: var(--font-serif);
+  font-size: 2rem;
+  font-weight: 900;
+  color: var(--ink);
+  display: block;
+  margin-bottom: 0.35rem;
+}
+.mm-legacy__stat-label {
+  font-size: 0.78rem;
+  color: var(--muted);
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+
+@media (max-width: 900px) {
+  .mm-hero {
+    padding: 3.5rem 1.5rem 3rem;
+  }
+  .mm-quote-dark {
+    padding: 2.5rem 1.5rem;
+  }
+  .mm-bio {
+    padding: 3rem 1.5rem;
+  }
+  .mm-bio__header {
+    flex-direction: column;
+    margin-bottom: 2rem;
+  }
+  .mm-bio__body {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .mm-bio__frame {
+    max-height: 320px;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 280px;
+  }
+  .mm-beliefs {
+    padding: 3rem 1.5rem;
+  }
+  .mm-beliefs__grid {
+    grid-template-columns: 1fr;
+  }
+  .mm-legacy {
+    padding: 3rem 1.5rem;
+  }
+  .mm-legacy__grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+}

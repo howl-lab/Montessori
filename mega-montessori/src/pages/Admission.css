@@ -1,0 +1,156 @@
+/* Admission.css */
+
+.adm-hero {
+  background: linear-gradient(135deg, #E05530 0%, #C94E2A 100%);
+  padding: 5rem 3rem 4rem; position: relative; overflow: hidden;
+}
+.adm-hero::before {
+  content: '';
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse at 80% 30%, rgba(249,200,52,.2) 0%, transparent 55%),
+    radial-gradient(ellipse at 10% 80%, rgba(255,200,160,.15) 0%, transparent 50%);
+  pointer-events: none;
+}
+.adm-hero::after {
+  content: '';
+  position: absolute; inset: 0;
+  background-image: radial-gradient(circle, rgba(255,255,255,.1) 1px, transparent 1px);
+  background-size: 28px 28px;
+  pointer-events: none;
+}
+.adm-hero__inner { max-width: 860px; margin: 0 auto; position: relative; z-index: 2; }
+.adm-hero__tag   { background: var(--yellow); color: var(--ink); }
+.adm-hero__title {
+  font-family: var(--font-serif);
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  font-weight: 900; color: #fff; line-height: 1.05; margin-bottom: 1.2rem;
+  animation: fadeUp 0.6s 0.1s ease both;
+}
+.adm-hero__title span { color: var(--yellow); }
+.adm-hero__sub {
+  font-size: 1.15rem; color: rgba(255,255,255,.85); line-height: 1.75; max-width: 580px;
+  animation: fadeUp 0.6s 0.2s ease both;
+}
+
+/* Layout */
+.adm-content {
+  max-width: 1100px; margin: 0 auto;
+  padding: 5rem 3rem;
+  display: grid;
+  grid-template-columns: 1fr 360px;
+  gap: 4rem;
+  align-items: start;
+}
+
+.adm-label {
+  font-size: 0.78rem; font-weight: 800; letter-spacing: 0.12em;
+  text-transform: uppercase; color: var(--teal); margin-bottom: 0.5rem;
+}
+.adm-title {
+  font-family: var(--font-serif);
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  font-weight: 900; margin-bottom: 1.5rem; line-height: 1.2;
+}
+.adm-title span { color: var(--coral); }
+.adm-divider { border: none; border-top: 1.5px solid rgba(28,26,46,.08); margin: 2.5rem 0; }
+
+/* Sessions */
+.sessions-grid {
+  display: grid; grid-template-columns: repeat(3,1fr);
+  gap: 1rem; margin-bottom: 3rem;
+}
+.session-card {
+  border-radius: var(--radius-md); padding: 1.5rem; text-align: center;
+  border: 2px solid transparent; transition: transform 0.2s;
+}
+.session-card:hover { transform: translateY(-4px); }
+.session-card--morning   { background: #FFF0EB; border-color: rgba(244,98,58,.25); }
+.session-card--afternoon { background: #E8FAFA; border-color: rgba(42,191,191,.25); }
+.session-card--allday    { background: #FFFBEA; border-color: rgba(249,200,52,.35); }
+.session-card__icon { font-size: 1.8rem; margin-bottom: 0.6rem; }
+.session-card__name {
+  font-family: var(--font-serif); font-weight: 900; font-size: 1rem; margin-bottom: 0.3rem;
+}
+.session-card--morning   .session-card__name { color: var(--coral); }
+.session-card--afternoon .session-card__name { color: #1A9A9A; }
+.session-card--allday    .session-card__name { color: #C89000; }
+.session-card__time { font-size: 0.82rem; font-weight: 800; color: var(--ink); margin-bottom: 0.2rem; }
+.session-card__age  { font-size: 0.78rem; color: var(--muted); }
+
+/* Info blocks */
+.adm-info-block { margin-bottom: 2.5rem; }
+.adm-info-block__title {
+  font-family: var(--font-serif); font-weight: 900; font-size: 1.2rem;
+  margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.5rem;
+}
+.adm-info-block p,
+.adm-info-block li { font-size: 0.95rem; color: var(--muted); line-height: 1.75; }
+.adm-info-block ul { padding-left: 1.2rem; }
+.adm-info-block ul li { margin-bottom: 0.25rem; }
+
+/* FAQ */
+.faq-item { border-bottom: 1.5px solid rgba(28,26,46,.08); }
+.faq-item__question {
+  width: 100%; background: none; border: none; padding: 1.2rem 0;
+  font-family: var(--font-sans); font-weight: 800; font-size: 0.95rem;
+  color: var(--ink); cursor: pointer; display: flex; justify-content: space-between;
+  align-items: center; text-align: left;
+}
+.faq-item__icon { color: var(--coral); font-size: 1.3rem; flex-shrink: 0; margin-left: 1rem; }
+.faq-item__answer {
+  font-size: 0.9rem; color: var(--muted); line-height: 1.75;
+  padding-bottom: 1.2rem;
+}
+
+/* Sidebar form */
+.adm-sidebar { position: sticky; top: 2rem; }
+.enroll-form {
+  background: var(--ink); border-radius: var(--radius-lg);
+  padding: 2.2rem; color: #fff;
+}
+.enroll-form__title {
+  font-family: var(--font-serif); font-size: 1.5rem; font-weight: 900; margin-bottom: 0.4rem;
+}
+.enroll-form__title span { color: var(--yellow); }
+.enroll-form__sub {
+  font-size: 0.85rem; color: rgba(255,255,255,.6); margin-bottom: 1.6rem; line-height: 1.5;
+}
+.enroll-form__group { display: flex; flex-direction: column; gap: 0.35rem; margin-bottom: 0.9rem; }
+.enroll-form__group label {
+  font-size: 0.75rem; font-weight: 800; color: rgba(255,255,255,.7);
+  letter-spacing: 0.06em; text-transform: uppercase;
+}
+.enroll-form__group input,
+.enroll-form__group select,
+.enroll-form__group textarea {
+  background: rgba(255,255,255,.1); border: 1.5px solid rgba(255,255,255,.2);
+  border-radius: 10px; padding: 0.7rem 0.9rem;
+  color: #fff; font-family: var(--font-sans); font-size: 0.9rem;
+  outline: none; transition: border-color 0.2s; resize: none;
+}
+.enroll-form__group input::placeholder,
+.enroll-form__group textarea::placeholder { color: rgba(255,255,255,.35); }
+.enroll-form__group select option { color: var(--ink); background: #fff; }
+.enroll-form__group input:focus,
+.enroll-form__group select:focus,
+.enroll-form__group textarea:focus { border-color: var(--yellow); }
+.enroll-form__submit {
+  width: 100%; background: var(--yellow); color: var(--ink); border: none;
+  border-radius: 50px; padding: 0.9rem; font-size: 0.95rem; font-weight: 800;
+  cursor: pointer; font-family: var(--font-sans); margin-top: 0.4rem;
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+.enroll-form__submit:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(249,200,52,.45); }
+.enroll-form__contact {
+  margin-top: 1.2rem; border-top: 1px solid rgba(255,255,255,.12); padding-top: 1.2rem;
+}
+.enroll-form__contact p   { font-size: 0.8rem; color: rgba(255,255,255,.5); margin-bottom: 0.3rem; }
+.enroll-form__contact a   { color: var(--yellow); text-decoration: none; font-weight: 700; }
+
+@media (max-width: 900px) {
+  .adm-hero    { padding: 3.5rem 1.5rem 3rem; }
+  .adm-content { grid-template-columns: 1fr; padding: 3rem 1.5rem; }
+  .adm-sidebar { position: static; }
+  .sessions-grid { grid-template-columns: 1fr; }
+}
