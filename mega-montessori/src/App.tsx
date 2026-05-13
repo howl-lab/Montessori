@@ -6,7 +6,7 @@
 //  • Props     — data you pass INTO a component, like HTML attributes
 //  • JSX       — the HTML-looking syntax inside TypeScript files
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import type { PageId } from './types'
 import Nav from './components/Nav'
 import Home from './pages/Home'
@@ -15,16 +15,33 @@ import Montessori from './pages/Montessori'
 import Admission from './pages/Admission'
 
 export default function App() {
-  // useState<PageId> declares state whose value must be a PageId.
-  // [currentPage, setCurrentPage] = [the value, the function to update it]
-  const [currentPage, setCurrentPage] = useState<PageId>('home')
+  const [currentPage, setCurrentPage] = useState<PageId>(() => {
+    return (sessionStorage.getItem('currentPage') as PageId) ?? 'home'
+  })
 
-  // useEffect runs AFTER the component renders.
-  // The second argument [] means "only run once on first mount."
+  const isInitialLoad = useRef(true)
+
   useEffect(() => {
-    // Re-run scroll-reveal whenever the page changes
+    sessionStorage.setItem('currentPage', currentPage)
     runReveal()
-  }, [currentPage]) // ← dependency array: re-run when currentPage changes
+  }, [currentPage])
+
+  // Save scroll position just before the tab closes or refreshes
+  useEffect(() => {
+    const save = () => sessionStorage.setItem('scrollY', String(window.scrollY))
+    window.addEventListener('beforeunload', save)
+    return () => window.removeEventListener('beforeunload', save)
+  }, [])
+
+  // Restore scroll position on the initial load only
+  useEffect(() => {
+    if (!isInitialLoad.current) return
+    isInitialLoad.current = false
+    const savedY = sessionStorage.getItem('scrollY')
+    if (savedY) {
+      setTimeout(() => window.scrollTo({ top: parseInt(savedY), behavior: 'instant' as ScrollBehavior }), 100)
+    }
+  }, [])
 
   // Called by Nav and page buttons to switch pages
   function navigate(page: PageId) {

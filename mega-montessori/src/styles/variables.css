@@ -6,30 +6,30 @@
 
 :root {
   /* ── Color palette ── */
-  --coral:  #F4623A;
-  --yellow: #F9C834;
-  --teal:   #2ABFBF;
-  --plum:   #7B3FA0;
-  --sage:   #6BBF88;
-  --cream:  #FFF9F0;
-  --ink:    #1C1A2E;
-  --muted:  #6B6882;
+  --coral: #f4623a;
+  --yellow: #f9c834;
+  --teal: #2abfbf;
+  --plum: #792baa;
+  --sage: #6bbf88;
+  --cream: #fff9f0;
+  --ink: #1c1a2e;
+  --muted: #6b6882;
 
   /* Darker accent shades used for gradients & footers */
-  --coral-dark:  #C94E2A;
-  --coral-deep:  #B8411F;
-  --coral-grad:  #E05530;
+  --coral-dark: #c94e2a;
+  --coral-deep: #b8411f;
+  --coral-grad: #e05530;
 
   /* ── Typography ── */
-  --font-serif: 'Fraunces', serif;
-  --font-sans:  'Nunito', sans-serif;
+  --font-serif: "Fraunces", serif;
+  --font-sans: "Nunito", sans-serif;
 
   /* ── Spacing scale ── */
-  --space-xs:  0.5rem;
-  --space-sm:  1rem;
-  --space-md:  2rem;
-  --space-lg:  3rem;
-  --space-xl:  5rem;
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 2rem;
+  --space-lg: 3rem;
+  --space-xl: 5rem;
   --space-2xl: 6rem;
 
   /* ── Border radius ── */

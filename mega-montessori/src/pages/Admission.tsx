@@ -6,8 +6,9 @@
 //  • Event handlers with TypeScript types
 
 import { useState } from "react";
-import { SESSIONS, FAQS } from "../data";
+import { PROGRAM_DAILY_SCHEDULE, FAQS } from "../data";
 import Footer from "../components/Footer";
+import ContactForm from "../components/ContactForm";
 import "./Admission.css";
 
 export default function Admission() {
@@ -29,18 +30,14 @@ export default function Admission() {
       </div>
 
       <div className="adm-content">
-        {/* Left column */}
         <div className="adm-main">
-          <SessionsSection />
+          <ScheduleSection />
           <hr className="adm-divider" />
           <InfoSection />
           <hr className="adm-divider" />
+          <ContactForm />
+          <hr className="adm-divider" />
           <FaqSection />
-        </div>
-
-        {/* Right sticky sidebar */}
-        <div className="adm-sidebar">
-          <EnrollForm />
         </div>
       </div>
 
@@ -49,27 +46,31 @@ export default function Admission() {
   );
 }
 
-// ─── Sessions ────────────────────────────────────────────────────────────────
+// ─── Schedule ────────────────────────────────────────────────────────────────
 
-function SessionsSection() {
+function ScheduleSection() {
   return (
     <div className="reveal">
-      <div className="adm-label">Program Options</div>
+      <div className="adm-label">A Day at Mega</div>
       <h2 className="adm-title">
-        Choose Your <span>Schedule</span>
+        Daily <span>Schedule</span>
       </h2>
-      <div className="sessions-grid">
-        {SESSIONS.map((s) => (
-          <div
-            key={s.variant}
-            className={`session-card session-card--${s.variant}`}
-          >
-            <div className="session-card__icon">{s.icon}</div>
-            <div className="session-card__name">{s.name}</div>
-            <div className="session-card__time">{s.time}</div>
-            <div className="session-card__age">{s.age}</div>
+      <div className="schedule__grid" style={{ marginTop: '1.5rem' }}>
+        {PROGRAM_DAILY_SCHEDULE.map((row) => (
+          <div key={row.time} className="schedule__row">
+            <div className="schedule__time">{row.time}</div>
+            <div className="schedule__activity">
+              <strong className="schedule__activity-title">{row.title}</strong>
+              <span className="schedule__activity-sep"> — </span>
+              <span className="schedule__activity-desc">{row.description}</span>
+            </div>
           </div>
         ))}
+      </div>
+      <div className="schedule__note" style={{ marginTop: '1.75rem' }}>
+        This schedule may shift slightly based on children&apos;s needs, weather,
+        and special classroom events. Our priority is always a calm, consistent
+        rhythm that supports each child&apos;s development.
       </div>
     </div>
   );
@@ -181,147 +182,3 @@ function FaqSection() {
   );
 }
 
-// ─── Enroll Form ──────────────────────────────────────────────────────────────
-// A "controlled form" — React owns all input values via state.
-
-// TypeScript interface describing the shape of form data
-interface FormData {
-  name: string;
-  email: string;
-  phone: string;
-  age: string;
-  session: string;
-  message: string;
-}
-
-function EnrollForm() {
-  // useState with an object — the whole form is one piece of state
-  const [form, setForm] = useState<FormData>({
-    name: "",
-    email: "",
-    phone: "",
-    age: "",
-    session: "",
-    message: "",
-  });
-
-  // A single generic handler for all inputs — uses the field name to update
-  // the right property. The type annotation tells TS what events are valid.
-  function handleChange(
-    e: React.ChangeEvent<
-      HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement
-    >,
-  ) {
-    const { name, value } = e.target;
-    // Spread operator copies existing state, then overrides the changed field
-    setForm((prev) => ({ ...prev, [name]: value }));
-  }
-
-  function handleSubmit(e: React.FormEvent) {
-    e.preventDefault(); // prevent page reload (default form behavior)
-    console.log("Form submitted:", form);
-    alert("Thank you! We'll be in touch within one school day.");
-  }
-
-  return (
-    <div className="enroll-form reveal">
-      <h3 className="enroll-form__title">
-        Request a <span>Tour</span>
-      </h3>
-      <p className="enroll-form__sub">
-        Fill out the form and our admissions team will be in touch within one
-        school day.
-      </p>
-
-      {/* onSubmit is React's version of the form submit event */}
-      <form onSubmit={handleSubmit}>
-        {[
-          {
-            label: "Parent / Guardian Name",
-            name: "name",
-            type: "text",
-            placeholder: "Jane Smith",
-          },
-          {
-            label: "Email Address",
-            name: "email",
-            type: "email",
-            placeholder: "jane@email.com",
-          },
-          {
-            label: "Phone Number",
-            name: "phone",
-            type: "tel",
-            placeholder: "(555) 000-0000",
-          },
-        ].map((field) => (
-          <div key={field.name} className="enroll-form__group">
-            <label>{field.label}</label>
-            <input
-              type={field.type}
-              name={field.name}
-              placeholder={field.placeholder}
-              // value comes from state; onChange updates state — this makes it "controlled"
-              value={form[field.name as keyof FormData]}
-              onChange={handleChange}
-            />
-          </div>
-        ))}
-
-        <div className="enroll-form__group">
-          <label>Child's Age</label>
-          <select name="age" value={form.age} onChange={handleChange}>
-            <option value="">Select age…</option>
-            {[
-              "18 months",
-              "2 years",
-              "3 years",
-              "4 years",
-              "5 years",
-              "6 years",
-            ].map((a) => (
-              <option key={a} value={a}>
-                {a}
-              </option>
-            ))}
-          </select>
-        </div>
-
-        <div className="enroll-form__group">
-          <label>Preferred Session</label>
-          <select name="session" value={form.session} onChange={handleChange}>
-            <option value="">Select session…</option>
-            <option value="morning">Morning (8:30–11:30 AM)</option>
-            <option value="afternoon">Afternoon (12:30–3:30 PM)</option>
-            <option value="allday">All Day (8:30 AM–3:30 PM)</option>
-          </select>
-        </div>
-
-        <div className="enroll-form__group">
-          <label>Anything you'd like us to know?</label>
-          <textarea
-            name="message"
-            rows={3}
-            placeholder="Questions, special considerations…"
-            value={form.message}
-            onChange={handleChange}
-          />
-        </div>
-
-        <button type="submit" className="enroll-form__submit">
-          Request a Tour
-        </button>
-      </form>
-
-      <div className="enroll-form__contact">
-        <p>📍 431 Runnymede St., East Palo Alto, CA 94303</p>
-        <p>
-          ✉️{" "}
-          <a href="mailto:megamontressori@gmail.com">
-            megamontressori@gmail.com
-          </a>
-        </p>
-      </div>
-    </div>
-  );
-}

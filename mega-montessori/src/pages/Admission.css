@@ -35,12 +35,8 @@
 
 /* Layout */
 .adm-content {
-  max-width: 1100px; margin: 0 auto;
+  max-width: 860px; margin: 0 auto;
   padding: 5rem 3rem;
-  display: grid;
-  grid-template-columns: 1fr 360px;
-  gap: 4rem;
-  align-items: start;
 }
 
 .adm-label {
@@ -103,54 +99,8 @@
   padding-bottom: 1.2rem;
 }
 
-/* Sidebar form */
-.adm-sidebar { position: sticky; top: 2rem; }
-.enroll-form {
-  background: var(--ink); border-radius: var(--radius-lg);
-  padding: 2.2rem; color: #fff;
-}
-.enroll-form__title {
-  font-family: var(--font-serif); font-size: 1.5rem; font-weight: 900; margin-bottom: 0.4rem;
-}
-.enroll-form__title span { color: var(--yellow); }
-.enroll-form__sub {
-  font-size: 0.85rem; color: rgba(255,255,255,.6); margin-bottom: 1.6rem; line-height: 1.5;
-}
-.enroll-form__group { display: flex; flex-direction: column; gap: 0.35rem; margin-bottom: 0.9rem; }
-.enroll-form__group label {
-  font-size: 0.75rem; font-weight: 800; color: rgba(255,255,255,.7);
-  letter-spacing: 0.06em; text-transform: uppercase;
-}
-.enroll-form__group input,
-.enroll-form__group select,
-.enroll-form__group textarea {
-  background: rgba(255,255,255,.1); border: 1.5px solid rgba(255,255,255,.2);
-  border-radius: 10px; padding: 0.7rem 0.9rem;
-  color: #fff; font-family: var(--font-sans); font-size: 0.9rem;
-  outline: none; transition: border-color 0.2s; resize: none;
-}
-.enroll-form__group input::placeholder,
-.enroll-form__group textarea::placeholder { color: rgba(255,255,255,.35); }
-.enroll-form__group select option { color: var(--ink); background: #fff; }
-.enroll-form__group input:focus,
-.enroll-form__group select:focus,
-.enroll-form__group textarea:focus { border-color: var(--yellow); }
-.enroll-form__submit {
-  width: 100%; background: var(--yellow); color: var(--ink); border: none;
-  border-radius: 50px; padding: 0.9rem; font-size: 0.95rem; font-weight: 800;
-  cursor: pointer; font-family: var(--font-sans); margin-top: 0.4rem;
-  transition: transform 0.15s, box-shadow 0.15s;
-}
-.enroll-form__submit:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(249,200,52,.45); }
-.enroll-form__contact {
-  margin-top: 1.2rem; border-top: 1px solid rgba(255,255,255,.12); padding-top: 1.2rem;
-}
-.enroll-form__contact p   { font-size: 0.8rem; color: rgba(255,255,255,.5); margin-bottom: 0.3rem; }
-.enroll-form__contact a   { color: var(--yellow); text-decoration: none; font-weight: 700; }
 
 @media (max-width: 900px) {
   .adm-hero    { padding: 3.5rem 1.5rem 3rem; }
-  .adm-content { grid-template-columns: 1fr; padding: 3rem 1.5rem; }
-  .adm-sidebar { position: static; }
-  .sessions-grid { grid-template-columns: 1fr; }
+  .adm-content { padding: 3rem 1.5rem; }
 }

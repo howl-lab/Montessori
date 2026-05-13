@@ -74,68 +74,63 @@
   background: var(--cream);
   padding: 5rem 3rem;
 }
-.mm-bio__header {
-  max-width: 900px;
-  margin: 0 auto 3rem;
-  display: flex;
-  gap: 1.5rem;
-  align-items: flex-start;
+.mm-bio__inner {
+  max-width: 860px;
+  margin: 0 auto;
 }
-.mm-bio__medallion {
-  flex-shrink: 0;
-  width: 72px;
-  height: 72px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, var(--plum), var(--coral));
+.mm-bio__profile {
   display: flex;
   align-items: center;
-  justify-content: center;
-  box-shadow: var(--shadow-md);
+  gap: 1.5rem;
+  margin-bottom: 3rem;
 }
-.mm-bio__initials {
+.mm-bio__portrait-img {
+  width: 130px;
+  height: 130px;
+  object-fit: cover;
+  border-radius: 14px;
+  flex-shrink: 0;
+}
+.mm-bio__name {
   font-family: var(--font-serif);
-  font-size: 1.75rem;
+  font-size: clamp(1.4rem, 2.5vw, 1.9rem);
   font-weight: 900;
-  color: #fff;
+  color: var(--ink);
+  margin-bottom: 0.35rem;
+  line-height: 1.15;
+}
+.mm-bio__meta {
+  font-size: 0.95rem;
+  color: var(--muted);
+  line-height: 1.55;
 }
 .mm-bio__heading {
   font-family: var(--font-serif);
   font-size: clamp(1.6rem, 3vw, 2.25rem);
   font-weight: 900;
-  color: var(--ink);
-  margin-bottom: 0.75rem;
+  color: var(--muted);
+  margin-bottom: 1.25rem;
   line-height: 1.15;
 }
-.mm-bio__heading span {
-  color: var(--coral);
-}
+.mm-bio__heading span { color: var(--coral); }
 .mm-bio__lede {
   font-size: 1.05rem;
   color: var(--muted);
   line-height: 1.7;
+  margin-bottom: 2rem;
 }
-.mm-bio__body {
-  max-width: 1000px;
-  margin: 0 auto;
+.mm-bio__photos {
   display: grid;
-  grid-template-columns: minmax(200px, 280px) 1fr;
-  gap: 3rem;
-  align-items: start;
+  grid-template-columns: 3fr 2fr;
+  gap: 1rem;
+  margin-bottom: 2rem;
 }
-.mm-bio__frame {
-  border-radius: 20px;
-  overflow: hidden;
-  border: 3px solid rgba(123, 63, 160, 0.25);
-  aspect-ratio: 3 / 4;
-  max-height: 420px;
-  background: linear-gradient(165deg, #e8e4f0 0%, #f5f0fa 100%);
-}
-.mm-bio__silhouette {
-  height: 100%;
-  min-height: 260px;
-  background:
-    radial-gradient(ellipse at 50% 35%, rgba(123, 63, 160, 0.35) 0%, transparent 45%),
-    linear-gradient(180deg, rgba(255, 255, 255, 0.5) 0%, transparent 40%);
+.mm-bio__photo {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  border-radius: 14px;
+  display: block;
 }
 .mm-bio__copy p {
   font-size: 1.02rem;
@@ -143,9 +138,7 @@
   line-height: 1.8;
   margin-bottom: 1.1rem;
 }
-.mm-bio__copy p:last-child {
-  margin-bottom: 0;
-}
+.mm-bio__copy p:last-child { margin-bottom: 0; }
 .mm-bio__copy em {
   color: var(--plum);
   font-style: italic;
@@ -265,19 +258,11 @@
   .mm-bio {
     padding: 3rem 1.5rem;
   }
-  .mm-bio__header {
-    flex-direction: column;
-    margin-bottom: 2rem;
-  }
-  .mm-bio__body {
+  .mm-bio__photos {
     grid-template-columns: 1fr;
-    gap: 2rem;
   }
-  .mm-bio__frame {
-    max-height: 320px;
-    margin: 0 auto;
-    width: 100%;
-    max-width: 280px;
+  .mm-bio__photo {
+    height: 220px;
   }
   .mm-beliefs {
     padding: 3rem 1.5rem;
